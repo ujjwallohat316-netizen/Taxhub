@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TaxHub — grounded AI knowledge and intake for German Steuerkanzleien." />
+  <title>TaxHub — Firm knowledge, instantly usable</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">T</span><span>TaxHub</span></div>
+    <div class="topbar-right"><span class="status-dot"></span> Grounded knowledge mode <span class="badge">MVP</span></div>
+  </header>
+
+  <main class="shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">AI knowledge layer for Steuerkanzleien</p>
+        <h1>Your firm's knowledge.<br><em>Instantly usable.</em></h1>
+        <p class="hero-copy">Ask a question. Get a concise answer grounded in trusted German tax material, with the exact source behind it — then turn the answer into client-ready work.</p>
+      </div>
+      <div class="hero-card">
+        <div class="mini-label">TODAY</div>
+        <div class="metric">3 min → 30 sec</div>
+        <div class="metric-copy">Illustrative target for finding a trusted answer and turning it into an action.</div>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <aside class="sidebar">
+        <div class="sidebar-title">Knowledge base</div>
+        <div id="sourceList" class="source-list"></div>
+        <div class="sidebar-note">Demo corpus uses public, authoritative German legislation. Firm-specific documents would be added in the real product.</div>
+      </aside>
+
+      <section class="chat-panel">
+        <div class="chat-header">
+          <div><strong>Ask TaxHub</strong><span>Source-grounded answers only</span></div>
+          <button id="clearBtn" class="ghost-btn">Reset</button>
+        </div>
+
+        <div id="messages" class="messages">
+          <div class="message assistant welcome">
+            <div class="avatar">T</div>
+            <div>
+              <div class="bubble"><strong>What do you need to know?</strong><p>Try one of the questions below, or ask your own question about the demo knowledge base.</p></div>
+              <div class="suggestions">
+                <button data-question="What documents are required to register a GmbH?"></button>
+                <button data-question="How long must accounting documents be retained?"></button>
+                <button data-question="What does the GmbHG say about registration of a GmbH?"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form id="askForm" class="composer">
+          <input id="question" autocomplete="off" placeholder="Ask about your firm's knowledge…" />
+          <button type="submit" id="askBtn"><span>Ask TaxHub</span><span>↗</span></button>
+        </form>
+      </section>
+    </section>
+
+    <section class="action-section">
+      <div>
+        <p class="eyebrow">Knowledge → action</p>
+        <h2>Turn an answer into useful work.</h2>
+        <p>TaxHub should not stop at Q&A. Use the grounded answer to draft the next client-facing step.</p>
+      </div>
+      <div class="action-card">
+        <div class="action-card-top"><span>CLIENT REQUEST</span><span class="tag">Draft</span></div>
+        <h3>New GmbH onboarding</h3>
+        <p>Generate a document request based on the registration requirements found in the knowledge base.</p>
+        <button id="draftBtn" class="primary-btn">Generate client request →</button>
+      </div>
+    </section>
+
+    <section id="draftOutput" class="draft-output hidden"></section>
+
+    <footer>
+      <span>TaxHub concept — CITO case · 2026</span>
+      <span>Not tax advice · Verify before relying on any answer</span>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
